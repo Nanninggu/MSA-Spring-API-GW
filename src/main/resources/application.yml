@@ -24,10 +24,14 @@ spring:
           uri: lb://USER-SERVICE #first-service project's application name
           predicates:
             - Path=/user-service/** #사용자가 입력한 조건값
-#        - id: user-service
-#          uri: lb://USER-SERVICE #second-service project's application name
-#          predicates:
-#            - Path=/user-service/** #사용자가 입력한 조건값
+        - id: catalog-service
+          uri: lb://CATALOG-SERVICE #second-service project's application name
+          predicates:
+            - Path=/catalog-service/** #사용자가 입력한 조건값
+        - id: order-service
+          uri: lb://ORDER-SERVICE #second-service project's application name
+          predicates:
+            - Path=/order-service/** #사용자가 입력한 조건값
           filters:
 #            - AddRequestHeader=second-request, second-request-header2 #앞에값이 키값이고 뒤에값이 벨류이다.
 #            - AddResponseHeader=second-response, second-response-header2 #앞에값이 키값이고 뒤에값이 벨류이다.
